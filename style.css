@@ -44,6 +44,10 @@ main {
   margin-bottom: 1rem;
 }
 
+.subtitle {
+  font-size:1.5rem;
+}
+
 footer {
   background-color: #ff69b4; /* Hot Pink */
   color: #fff;
