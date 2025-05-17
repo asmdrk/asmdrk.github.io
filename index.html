@@ -4,16 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diwakar's Portfolio!</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Diwakar's Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- DaisyUI Plugin -->
+  <script>
+    tailwind.config = {
+      plugins: [require('daisyui')],
+      daisyui: {
+        themes: [
+          'light',
+        ],
+      },
+    }
+  </script>
 </head>
 
-<body>
-  <header>
-    <h1 class="title">🌟Diwakar's Portfolio 🌟</h1>
-    <h2 class = "subtitle"> Now in Barbie Pink! (Oppenheimer version coming soon)</h2>
-    <nav>
-      <ul>
+<body class="bg-base-100 text-base-content">
+  <!-- Navbar -->
+  <header class="navbar bg-primary text-primary-content shadow-lg">
+    <div class="flex-1 px-4">
+      <a href="#" class="btn btn-ghost normal-case text-xl">Diwakar's Portfolio</a>
+    </div>
+    <nav class="flex-none">
+      <ul class="menu menu-horizontal px-1">
         <li><a href="#about">🙋 About Me</a></li>
         <li><a href="#projects">💻 Projects</a></li>
         <li><a href="#contact">📞 Contact</a></li>
@@ -21,56 +35,80 @@
     </nav>
   </header>
 
-  <main>
-      <section id="about">
-      <h2 class="heading">About Me 😄</h2>
-      <p>
-        Hey there! I'm Diwakar. I like building things. I like analysing and visualising data. Recently I have started to like frontend and web development. <br>
-        I like lots of things, sometimes too many. But it is fun that way. <br>
-        When I'm not coding, I am playing basketball, working out so I can be better at basketball, watching basketball...or playing videogames and watching anime. <br>
-      </p>
+  <!-- Main Content -->
+  <main class="space-y-16 p-8">
+    <!-- About Me -->
+    <section id="about" class="container mx-auto">
+      <div class="card bg-base-200 shadow-xl p-6">
+        <h2 class="card-title text-primary">About Me</h2>
+        <p class="mt-4 leading-relaxed">
+          Hey there! I'm Diwakar. I love building things and diving into data analysis and visualization. Recently, I've also been exploring frontend and web development.
+          When I'm not coding, you'll find me playing basketball, working out, watching basketball, gaming, or catching up on anime.
+        </p>
+      </div>
     </section>
 
+    <!-- Projects -->
+    <section id="projects" class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center text-primary mb-8">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project Card -->
+        <div class="card bg-base-200 shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title">Discord Bot: DeKay</h3>
+            <p>
+              A personal Discord bot built with Discord.js for music playback from YouTube, including queue management, play/pause controls, and fun GIF commands to entertain friends. My first Node.js project, helping me master asynchronous programming and promises.
+            </p>
+            <div class="card-actions justify-end mt-4">
+              <a href="https://github.com/asmdrk/dekay_bot" class="btn btn-primary btn-sm" target="_blank">GitHub Repo</a>
+            </div>
+          </div>
+        </div>
 
-    <section id="projects">
-      <h2 class="heading">Projects</h2>
-      <ul>
-        <h3>There are a lot of things I want to do, but here are some things I have already done</h3>
-        <li>
-          <h3>Discord Bot, DeKay</h3>
-          <p>This is a discord bot I have been working on recently for personal use for my friends and I. I used the discordJS module for development. 
-          Dekay's main purpose is to play music, or specifically audio from youtube videos and the user can queue up multiple songs to play in sequence, additionally the user can pause and stop the music whenever they like through interactable buttons.
-          It also has some other amusing features like sending insulting GIFs which makes my friends laugh.  <br> 
-          It has been awesome to work on this as usually nobody gets to use the stuff I build, so seeing my friends use it motivates me to work on it and improve it. It is my first time developing in NodeJS and I have been enjoying learning more about asynchronous programming and promises. </p>
-          <a href="https://github.com/asmdrk/dekay_bot">GitHub Repo</a>
-        </li>
-        <li>
-          <h3 >Query Engine</h3>
-          <p>For a group project I worked on the backend of a query engine in TypeScript. I implemented functionality relating to parsing different files(HTML and JSON) containing data on university courses and buildings and storing relevant information locally so they could be queried. 
-          Testing was done via MochaJS and I was responsible for constructing a comprehensive testing suite covering different use cases. We used Github for version control and collaboration and followed Agile methodologies throughout, having weekly scrum meetings and code reviews to improve our workflow. </p>
-          <a href="https://github.com/asmdrk/PerformQuery">GitHub Repo</a>
-        </li>
-         <li>
-          <h3 >Calorie Tracker</h3>
-          <p>A calorie tracker written in Java for tracking your calories and macros throughout the day. It has a functioning GUI, memory persistence to save and load your caloric intake for a certain day, and the ability to set a calorie limit. One of my earliest projects but one I am still proud of, and I made it in order to help myself eat healthier so I can achieve my fitness goals. </p>
-          <a href="https://github.com/asmdrk/CaloriesMacros.Tracker">GitHub Repo</a>
-        </li>
-      </ul>
+        <div class="card bg-base-200 shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title">Query Engine</h3>
+            <p>
+              Backend engine in TypeScript for parsing and querying university course and building data (HTML/JSON). Implemented robust test coverage with MochaJS and collaborated via GitHub using Agile practices with weekly scrums and code reviews.
+            </p>
+            <div class="card-actions justify-end mt-4">
+              <a href="https://github.com/asmdrk/PerformQuery" class="btn btn-primary btn-sm" target="_blank">GitHub Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-200 shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title">Calorie Tracker</h3>
+            <p>
+              A Java GUI application for tracking daily calories and macros with memory persistence and configurable calorie limits—an early passion project to support my fitness journey.
+            </p>
+            <div class="card-actions justify-end mt-4">
+              <a href="https://github.com/asmdrk/CaloriesMacros.Tracker" class="btn btn-primary btn-sm" target="_blank">GitHub Repo</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="contact">
-      <h2 class="heading">Contact</h2>
-      For professional inquiries, or if you would like to talk about any of the interests I mentioned here(I am always happy to talk about basketball or anime), please use any of the following contact methods: <br>
-      <p>
-        Email: <a href = "mailto:dgupta011101@gmail.com">dgupta011101@gmail.com</a> <br>
-        Discord: kongey_dong <br>
-        Phone: +1 (236)-979-9055
-  
-      </p>
+    <!-- Contact -->
+    <section id="contact" class="container mx-auto">
+      <div class="card bg-base-200 shadow-xl p-6">
+        <h2 class="card-title text-primary">Contact</h2>
+        <p class="mt-4 leading-relaxed">
+          For professional inquiries or to chat about basketball, anime, or anything in between, feel free to reach out:
+        </p>
+        <ul class="mt-4">
+          <li>Email: <a href="mailto:dgupta011101@gmail.com" class="link link-primary">dgupta011101@gmail.com</a></li>
+          <li>Discord: kongey_dong</li>
+          <li>Phone: +1 (236) 979-9055</li>
+        </ul>
+      </div>
     </section>
   </main>
 
-  <footer>
+  <!-- Footer -->
+  <footer class="footer footer-center p-4 bg-base-300 text-base-content">
     <p>&copy; 2023 Diwakar Gupta. All rights reserved.</p>
   </footer>
 </body>
